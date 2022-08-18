@@ -1,0 +1,4 @@
+printf returns numbers of characters 
+--> printf("%s","Hello"); will return 5
+--> printf("%d", printf("%s","Hello")); will print 5
+
