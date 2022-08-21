@@ -1,11 +1,32 @@
 #include <stdio.h>
-#include <limits.h>  
+#include <limits.h>
+
+#include "data.c"
+#include "../func/increment.c"
+
+// Global declaration of variable p
+int p = 8;
+
+// Extern Var // a is defined in data.c
+extern int a;
+
+float consta(){
+    float a = 22;
+    int b = 7;
+    float c = a/b;
+    return c;
+}
+
+// #define is a preprocessor which defines macro named pi
+#define PI consta()
 
 // 2**(n)-1 for unsigned
 // -[2**(n-1)] to +[2**(n-1)-1] for signed
 
 // %d   for signed int 
 // %u   for unsigned int
+// %o   for octal int
+// %x   for hexadecimal int
 // %ld  for signed long int
 // %lu  for unsigned long int 
 // %lld for signed long long int
@@ -41,10 +62,23 @@ void main(){
     // printf("%d",lol4);
 
     void character();
-    character();
-
     void float_type();
-    float_type();
+
+    // character();
+    // float_type();
+
+    // Types of Variables i.e. Variable Modifiers
+    void extern_type();
+    void register_type();
+    void static_type();
+    void const_type();
+
+    // extern_type();
+    // register_type();
+    // static_type();
+    // const_type();
+
+
 }
 
 void character(){
@@ -93,3 +127,44 @@ void float_type(){
 
 
 }
+
+void extern_type(){
+    // normal variables are declared and defined
+    // i.e declared and allocated some memory space
+    // Extern only declares the variable 
+    // a is declared at top
+    printf("%d",a);
+
+    extern int p;
+    printf("%d",p);
+
+}
+
+void register_type(){
+    // Stores variable in Register 
+    // Refer memory.txt
+    register int re ;
+    printf("%d",re);
+
+}
+
+void static_type(){
+    // increment is included at top
+    int value;
+    value = increment();
+    value = increment();
+    value = increment();
+
+    printf("%d",value);
+
+}
+
+void const_type(){
+    
+    const int e = 2.71;
+
+    printf("%d \n",e);
+    printf("%.9lf",PI);
+}
+
+

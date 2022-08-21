@@ -1,0 +1,31 @@
+ Increasing order of access time ratio and
+ Decreasing order of space allocation ratio
+
+    1.Register Memory
+    2.Cache Memory
+    3.Main Memory (Primary Memory)
+    4.Magnetic Disks   (Auxillary Memory)
+    5.Magnetic Tapes   (Auxillary Memory)
+
+
+ Memory Layout:
+
+
+      |--------------------------------------------|
+      |  Command Line Arguments and env variables  |
+      |--------------------------------------------|
+      |                    Stack                   |
+      |                                            | 
+      |           ----------------------           | 
+      |                                            | 
+      |                     Heap                   | 
+      |--------------------------------------------| 
+      |           Uninitialized Data (bss)         |  -->   Uninitialized global, static, const global
+      |--------------------------------------------| 
+      |              Initialized Data              |  -->   Global, Extern, Static, const global
+      |--------------------------------------------| 
+      |              Text/Code Segement            |  -->   Read Only
+      |--------------------------------------------|
+
+      
+    
